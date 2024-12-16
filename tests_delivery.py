@@ -12,10 +12,10 @@ class TestDeliveryCost(unittest.TestCase):
         (1.5, 'small', True, 'very_high', 720),
         (1.5, 'big', False, 'high', 400),
         (2, 'small', False, 'increased', 400),
-        (2.1, 'big', True, 'normal', 600),
-        (10, 'small', True, 'very_high', 800),
-        (10.1, 'big', False, 'high', 560),
-        (30, 'small', True, 'increased', 720),
+        (2.1, 'small', True, 'normal', 500),
+        (10, 'small', True, 'high', 700),
+        (10.1, 'big', False, 'very_high', 640),
+        (30, 'big', True, 'increased', 840),
         (30.1, 'big', False, 'normal', 500),
     ])
     def test_delivery_cost(self, distance, size, fragile, load, expected):
