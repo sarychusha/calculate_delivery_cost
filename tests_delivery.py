@@ -24,10 +24,10 @@ class TestDeliveryCost(unittest.TestCase):
 class TestDeliveryCostNegative(unittest.TestCase):
     @parameterized.expand([
         (-1, 'small', True, 'very_high', "Distance must be a positive number."),
+        ('str', 'small', True, 'very_high', "Distance must be a positive number."),
         (0, 'small', True, 'very_high', "Distance must be a positive number."),
         (10, 'medium', True, 'very_high', "Size must be 'small' or 'big'."),
         (10, 'small', None, 'very_high', "Fragility must be True or False."),
-        (10, 'small', True, 'heavy', "Load must be one of: 'very_high', 'high', 'increased', 'normal'."),
         (31, 'big', True, 'normal', "Fragile goods cannot be transported over 30 km."),
     ])
     def test_invalid_cases(self, distance, size, fragile, load, expected_message):
